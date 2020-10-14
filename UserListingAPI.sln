@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserListingAPI", "UserListi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserListingAPI.DataModel", "UserListingAPI.DataModel\UserListingAPI.DataModel.csproj", "{7D6AF9C0-132E-4862-A0C9-F5DE32A89511}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserListingAPI.DomainModel", "UserListingAPI.DomainModel\UserListingAPI.DomainModel.csproj", "{A0D6111F-77DF-4908-B32E-C10BE0518912}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7D6AF9C0-132E-4862-A0C9-F5DE32A89511}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D6AF9C0-132E-4862-A0C9-F5DE32A89511}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D6AF9C0-132E-4862-A0C9-F5DE32A89511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D6111F-77DF-4908-B32E-C10BE0518912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D6111F-77DF-4908-B32E-C10BE0518912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D6111F-77DF-4908-B32E-C10BE0518912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D6111F-77DF-4908-B32E-C10BE0518912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
