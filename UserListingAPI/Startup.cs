@@ -7,6 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using UserListingAPI.DataModel.DBContext;
 
 namespace UserListingAPI
 {
@@ -22,6 +24,11 @@ namespace UserListingAPI
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+
+			// Register UserDBContext and Configure sqlserver, connection string thru options.
+			services.AddDbContextPool<UserDBContext>(options =>
+				     options.UseSqlServer(Configuration.GetConnectionString("UserDBConnection")));
+
 			services.AddControllers();
 
 			// Register Swagger 
