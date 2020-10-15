@@ -5,24 +5,24 @@ using UserListingAPI.Business.BusinessContracts;
 
 namespace UserListingAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class UsersController : ControllerBase
-    {
+	[Route("api/[controller]")]
+	[ApiController]
+	public class UsersController : ControllerBase
+	{
 		private readonly IUserBusiness _userBusiness;
 
 		public UsersController(IUserBusiness userBusiness)
-        {
-            _userBusiness = userBusiness;
-        }
+		{
+			_userBusiness = userBusiness;
+		}
 
-        // GET: api/Users
-        [HttpGet]
-        public ActionResult<DomainModel.User[]> GetUsers()
-        {
-			var result = _userBusiness.GetUsers(); 
+		// GET: api/Users
+		[HttpGet]
+		public ActionResult<DomainModel.User[]> GetUsers()
+		{
+			var result = _userBusiness.GetUsers();
 			return Ok(result);
-        }
+		}
 
 		// POST: api/Users
 		[HttpPost]
@@ -37,6 +37,14 @@ namespace UserListingAPI.Controllers
 		public ActionResult<DomainModel.User> PatchUser(DomainModel.User user)
 		{
 			var result = _userBusiness.UpdateUser(user);
+			return Ok(result);
+		}
+
+		// PATCH: api/Users
+		[HttpDelete("{id}")]
+		public ActionResult<DomainModel.User> DeleteUser(int id)
+		{
+			var result = _userBusiness.DeleteUser(id);
 			return Ok(result);
 		}
 

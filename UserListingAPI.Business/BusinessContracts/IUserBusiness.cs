@@ -9,5 +9,6 @@ namespace UserListingAPI.Business.BusinessContracts
 		IList<User> GetUsers();
 		User AddUser(User user);
 		User UpdateUser(User user);
+		User DeleteUser(int id); 
 	}
 }

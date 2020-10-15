@@ -11,5 +11,6 @@ namespace UserListingAPI.Repository.RepositoryContracts
 		int GetNameCount(string name);
 		User GetById(int id);
 		User Update(User user);
+		User Delete(int id);
 	}
 } 

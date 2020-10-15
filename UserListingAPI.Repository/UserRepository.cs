@@ -58,12 +58,25 @@ namespace UserListingAPI.Repository
 		public User Update(User user)
 		{
 			var result = new User();
-			var userDbObj = _dbContext.Users.FirstOrDefault(user => user.Id == user.Id);
+			var userDbObj = _dbContext.Users.FirstOrDefault(u => u.Id == user.Id);
 			if (userDbObj != null)
 			{
 				UpdateUserRecord(userDbObj, user);
 				_dbContext.SaveChanges();
 				result = user;
+			}
+			return result;
+		}
+
+		public User Delete(int id)
+		{
+			var result = new User();
+			var userDbObj = _dbContext.Users.FirstOrDefault(user => user.Id == id);
+			if (userDbObj != null)
+			{
+				result = Mapper.Mapper.UserMapper(userDbObj);
+				_dbContext.Users.Remove(userDbObj);
+				_dbContext.SaveChanges();
 			}
 			return result;
 		}

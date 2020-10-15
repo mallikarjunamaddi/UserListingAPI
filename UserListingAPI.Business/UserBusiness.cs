@@ -46,6 +46,12 @@ namespace UserListingAPI.Business
 			return result;
 		}
 
+		public User DeleteUser(int id)
+		{
+			var result = _userRepository.Delete(id);
+			return result;
+		}
+
 		private string GenerateEmail(string name)
 		{
 			var email = name;
