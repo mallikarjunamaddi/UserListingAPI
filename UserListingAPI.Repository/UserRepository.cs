@@ -36,5 +36,11 @@ namespace UserListingAPI.Repository
 			_dbContext.SaveChanges();
 			return user;
 		}
+
+		public int GetNameCount(string name)
+		{
+			var result = _dbContext.Users.Where(user => user.Name == name).Count();
+			return result;
+		}
 	}
 }

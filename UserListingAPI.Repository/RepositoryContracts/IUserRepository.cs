@@ -8,5 +8,6 @@ namespace UserListingAPI.Repository.RepositoryContracts
 	{
 		IList<User> GetAll();
 		User Add(User user);
+		int GetNameCount(string name);
 	}
 }
