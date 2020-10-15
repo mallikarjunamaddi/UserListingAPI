@@ -1,4 +1,6 @@
-﻿using UserListingAPI.DataModel;
+﻿using System;
+
+using UserListingAPI.DataModel;
 
 namespace UserListingAPI.Repository.Mapper
 {
@@ -24,7 +26,9 @@ namespace UserListingAPI.Repository.Mapper
 				Name = user.Name,
 				Email = user.Email,
 				RoleType = user.RoleType,
-				Status = user.Status
+				Status = user.Status,
+				CreatedAt = DateTime.UtcNow,
+				ModifiedAt = DateTime.UtcNow
 			};
 			return userObj;
 		}
