@@ -54,6 +54,13 @@ namespace UserListingAPI
 				c.SwaggerEndpoint(url: "/swagger/v1/swagger.json", name: "User Listing API Version 1")
 			);
 
+			// Enabling Cors
+			app.UseCors(x =>
+				 x.AllowAnyOrigin()
+				 .AllowAnyHeader()
+				 .AllowAnyMethod()
+			 );
+
 			app.UseRouting();
 
 			app.UseAuthorization();
