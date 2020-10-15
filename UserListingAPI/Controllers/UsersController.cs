@@ -32,5 +32,13 @@ namespace UserListingAPI.Controllers
 			return Ok(result);
 		}
 
+		// PATCH: api/Users
+		[HttpPatch]
+		public ActionResult<DomainModel.User> PatchUser(DomainModel.User user)
+		{
+			var result = _userBusiness.UpdateUser(user);
+			return Ok(result);
+		}
+
 	}
 }

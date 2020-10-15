@@ -31,6 +31,21 @@ namespace UserListingAPI.Business
 			return result;
 		}
 
+		public User UpdateUser(User user)
+		{
+			var result = new User();
+			var existingUser = _userRepository.GetById(user.Id);
+			if (existingUser != null)
+			{
+				if (existingUser.Name != user.Name)
+				{
+					user.Email = GenerateEmail(user.Name);
+				}
+				result = _userRepository.Update(user);
+			}
+			return result;
+		}
+
 		private string GenerateEmail(string name)
 		{
 			var email = name;
