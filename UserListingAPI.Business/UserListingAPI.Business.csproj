@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UserListingAPI.DataModel\UserListingAPI.DataModel.csproj" />
+    <ProjectReference Include="..\UserListingAPI.DomainModel\UserListingAPI.DomainModel.csproj" />
+    <ProjectReference Include="..\UserListingAPI.Repository\UserListingAPI.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
