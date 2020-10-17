@@ -14,7 +14,8 @@ namespace UserListingAPI.Repository.Mapper
 				Name = user.Name,
 				Email = user.Email,
 				RoleType = user.RoleType,
-				Status = user.Status
+				Status = user.Status,
+				MobileNumber = user.MobileNumber
 			};
 			return userObj;
 		}
@@ -27,6 +28,7 @@ namespace UserListingAPI.Repository.Mapper
 				Email = user.Email,
 				RoleType = user.RoleType,
 				Status = user.Status,
+				MobileNumber = user.MobileNumber,
 				CreatedAt = DateTime.UtcNow,
 				ModifiedAt = DateTime.UtcNow
 			};

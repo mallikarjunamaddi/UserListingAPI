@@ -87,6 +87,7 @@ namespace UserListingAPI.Repository
 			userDbObj.Email = user.Email;
 			userDbObj.RoleType = user.RoleType;
 			userDbObj.Status = user.Status;
+			userDbObj.MobileNumber = user.MobileNumber;
 			userDbObj.ModifiedAt = DateTime.UtcNow;
 		}
 	}

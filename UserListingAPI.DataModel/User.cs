@@ -12,5 +12,7 @@ namespace UserListingAPI.DataModel
 		public string RoleType { get; set; }
 		[Required, StringLength(50)]
 		public string Status { get; set; }
+		[StringLength(12, MinimumLength = 12, ErrorMessage = "This Phone pattern is ###-###-####")]
+		public string MobileNumber { get; set; }
 	}
 }
