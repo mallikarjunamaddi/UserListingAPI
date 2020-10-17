@@ -9,6 +9,7 @@ namespace UserListingAPI.DataModel.DBContext
 
 		}
 
-		public DbSet<User> Users { get; set; } 
+		public DbSet<User> Users { get; set; }
+		public DbSet<Log> Log { get; set; } 
 	}
 }
