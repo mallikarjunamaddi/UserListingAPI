@@ -103,7 +103,7 @@ namespace UserListingAPI.Business
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
-		private string GenerateEmail(string name)
+		public string GenerateEmail(string name)
 		{
 			_logger.LogInformation("UserBusiness:GenerateEmail Start: {0}", DateTime.Now);
 

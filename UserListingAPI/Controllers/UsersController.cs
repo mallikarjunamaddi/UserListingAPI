@@ -121,6 +121,30 @@ namespace UserListingAPI.Controllers
 			_logger.LogInformation("UsersController:DeleteUser:Id: {0} End: {1}", id, DateTime.Now);
 			return Ok(result);
 		}
-		#endregion
+
+		/// <summary>
+		/// Will generate a unique email based on name
+		/// </summary>
+		/// <returns></returns>
+		// GET: api/Users
+		[HttpGet("generateEmail/{name}")]
+		public ActionResult<string> GenerateEmail(string name)
+		{
+			_logger.LogInformation("UsersController:GenerateEmail:name: {0} Start: {1}", name, DateTime.Now);
+
+			string result = null;
+			try
+			{
+				result = _userBusiness.GenerateEmail(name);
+			}
+			catch (Exception e)
+			{
+				_logger.LogError(e, "UsersController:GenerateEmail:name: {0} Failed: {1}", name, DateTime.Now);
+			}
+
+			_logger.LogInformation("UsersController:GenerateEmail:Id: {0} End: {1}", name, DateTime.Now);
+			return Ok(result);
+		}
+	#endregion
 	}
 }

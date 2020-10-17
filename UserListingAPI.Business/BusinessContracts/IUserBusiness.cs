@@ -9,6 +9,7 @@ namespace UserListingAPI.Business.BusinessContracts
 		IList<User> GetUsers();
 		User AddUser(User user);
 		User UpdateUser(User user);
-		User DeleteUser(int id); 
+		User DeleteUser(int id);
+		string GenerateEmail(string name);
 	}
 }
