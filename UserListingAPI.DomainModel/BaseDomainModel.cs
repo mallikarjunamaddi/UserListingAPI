@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace UserListingAPI.DomainModel
+﻿namespace UserListingAPI.DomainModel
 {
 	public class BaseDomainModel
 	{

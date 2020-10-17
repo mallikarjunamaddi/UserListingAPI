@@ -12,15 +12,24 @@ namespace UserListingAPI.Controllers
 	[ApiController]
 	public class UsersController : ControllerBase
 	{
+		#region Properties
 		private readonly IUserBusiness _userBusiness;
 		private readonly ILogger<UsersController> _logger;
+		#endregion
 
+		#region Constructor
 		public UsersController(IUserBusiness userBusiness, ILogger<UsersController> logger)
 		{
 			_logger = logger;
 			_userBusiness = userBusiness;
 		}
+		#endregion
 
+		#region Action Methods
+		/// <summary>
+		/// Will get the list of Users
+		/// </summary>
+		/// <returns></returns>
 		// GET: api/Users
 		[HttpGet]
 		public ActionResult<DomainModel.User[]> GetUsers()
@@ -41,6 +50,10 @@ namespace UserListingAPI.Controllers
 			return Ok(result);
 		}
 
+		/// <summary>
+		/// Adds a new User
+		/// </summary>
+		/// <returns></returns>
 		// POST: api/Users
 		[HttpPost]
 		public ActionResult<DomainModel.User> PostUser(DomainModel.User user)
@@ -61,6 +74,10 @@ namespace UserListingAPI.Controllers
 			return Ok(result);
 		}
 
+		/// <summary>
+		/// Update an Existing User
+		/// </summary>
+		/// <returns></returns>
 		// PATCH: api/Users
 		[HttpPatch]
 		public ActionResult<DomainModel.User> PatchUser(DomainModel.User user)
@@ -81,6 +98,10 @@ namespace UserListingAPI.Controllers
 			return Ok(result);
 		}
 
+		/// <summary>
+		/// Delete an Existing User
+		/// </summary>
+		/// <returns></returns>
 		// PATCH: api/Users
 		[HttpDelete("{id}")]
 		public ActionResult<DomainModel.User> DeleteUser(int id)
@@ -100,6 +121,6 @@ namespace UserListingAPI.Controllers
 			_logger.LogInformation("UsersController:DeleteUser:Id: {0} End: {1}", id, DateTime.Now);
 			return Ok(result);
 		}
-
+		#endregion
 	}
 }

@@ -12,14 +12,24 @@ namespace UserListingAPI.Repository
 {
 	public class UserRepository : IUserRepository
 	{
-		private readonly ILogger<UserRepository> _logger;
+		#region Properties
 		private readonly UserDBContext _dbContext;
+		private readonly ILogger<UserRepository> _logger;
+		#endregion
 
+		#region Constructor
 		public UserRepository(UserDBContext dbContext, ILogger<UserRepository> logger)
 		{
 			_logger = logger;
 			_dbContext = dbContext;
 		}
+		#endregion
+
+		#region Public Methods
+		/// <summary>
+		/// Gets all the User records from Database
+		/// </summary>
+		/// <returns></returns>
 		public IList<User> GetAll()
 		{
 			_logger.LogInformation("UserRepository:GetAll Start: {0}", DateTime.Now);
@@ -36,6 +46,12 @@ namespace UserListingAPI.Repository
 			_logger.LogInformation("UserRepository:GetAll End: {0}", DateTime.Now);
 			return users;
 		}
+
+		/// <summary>
+		/// Adds a new User record to User table.
+		/// </summary>
+		/// <param name="user"></param>
+		/// <returns></returns>
 		public User Add(User user)
 		{
 			_logger.LogInformation("UserRepository:Add Start: {0}", DateTime.Now);
@@ -48,6 +64,11 @@ namespace UserListingAPI.Repository
 			return user;
 		}
 
+		/// <summary>
+		/// Returns record count with same name
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
 		public int GetNameCount(string name)
 		{
 			_logger.LogInformation("UserRepository:GetNameCount Start: {0}", DateTime.Now);
@@ -58,6 +79,11 @@ namespace UserListingAPI.Repository
 			return result;
 		}
 
+		/// <summary>
+		/// Returns User record based on id
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		public User GetById(int id)
 		{
 			_logger.LogInformation("UserRepository:GetById Start: {0}", DateTime.Now);
@@ -73,6 +99,11 @@ namespace UserListingAPI.Repository
 			return result;
 		}
 
+		/// <summary>
+		/// Updates an Existing User record
+		/// </summary>
+		/// <param name="user"></param>
+		/// <returns></returns>
 		public User Update(User user)
 		{
 			_logger.LogInformation("UserRepository:Update Start: {0}", DateTime.Now);
@@ -90,6 +121,11 @@ namespace UserListingAPI.Repository
 			return result;
 		}
 
+		/// <summary>
+		/// Delete an Existing User record
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		public User Delete(int id)
 		{
 			_logger.LogInformation("UserRepository:Delete Start: {0}", DateTime.Now);
@@ -106,7 +142,14 @@ namespace UserListingAPI.Repository
 			_logger.LogInformation("UserRepository:Delete End: {0}", DateTime.Now);
 			return result;
 		}
+		#endregion
 
+		#region Private Methods
+		/// <summary>
+		/// Maps the changes/updates to User DB Object 
+		/// </summary>
+		/// <param name="userDbObj"></param>
+		/// <param name="user"></param>
 		private void UpdateUserRecord(DataModel.User userDbObj, User user)
 		{
 			userDbObj.Name = user.Name;
@@ -116,5 +159,6 @@ namespace UserListingAPI.Repository
 			userDbObj.MobileNumber = user.MobileNumber;
 			userDbObj.ModifiedAt = DateTime.UtcNow;
 		}
+		#endregion
 	}
 }
